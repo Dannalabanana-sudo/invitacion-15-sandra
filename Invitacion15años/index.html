@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Invitación de 15 - Sandra</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fff0f5;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      color: #5d3a58;
+    }
+    .butterfly {
+      position: absolute;
+      width: 50px;
+      animation: fly 8s linear infinite;
+      pointer-events: none;
+      opacity: 0;
+    }
+    @keyframes fly {
+      0% {
+        transform: translateY(100vh) translateX(0) scale(0.5) rotate(0deg);
+        opacity: 1;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(200px) scale(1) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    img#invitacion {
+      width: 90%;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      margin-top: 40px;
+      display: none;
+      animation: aparecer 2s forwards;
+    }
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    form {
+      margin-top: 30px;
+      display: none;
+    }
+    input, select, button {
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #ffb6c1;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff69b4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mariposas -->
+  <img src="https://i.postimg.cc/SRbz5rdy/mariposa-azul.png" class="butterfly" style="left: 10%; animation-delay: 0s;">
+  <img src="https://i.postimg.cc/SRbz5rdy/mariposa-azul.png" class="butterfly" style="left: 30%; animation-delay: 2s;">
+  <img src="https://i.postimg.cc/SRbz5rdy/mariposa-azul.png" class="butterfly" style="left: 50%; animation-delay: 4s;">
+  <img src="https://i.postimg.cc/SRbz5rdy/mariposa-azul.png" class="butterfly" style="left: 70%; animation-delay: 6s;">
+  <img src="https://i.postimg.cc/SRbz5rdy/mariposa-azul.png" class="butterfly" style="left: 90%; animation-delay: 8s;">
+
+  <!-- Imagen de la invitación -->
+  <img src="invitacion.png" alt="Invitación de 15" id="invitacion">
+
+  <!-- Formulario de confirmación -->
+  <form action="https://formsubmit.co/mendozadanny0206@gmail.com" method="POST" id="formulario">
+    <h1>¡Confirma tu asistencia! 🎀</h1>
+    <input type="text" name="Nombre" placeholder="Tu nombre" required><br>
+    <select name="Acompañantes" required>
+      <option value="">¿Cuántos acompañantes?</option>
+      <option value="0">Ninguno</option>
+      <option value="1">1 acompañante</option>
+      <option value="2">2 acompañantes</option>
+      <option value="3">3 acompañantes</option>
+    </select><br>
+    <button type="submit">Confirmar Asistencia</button>
+  </form>
+
+  <script>
+    // Esperamos unos segundos para mostrar la imagen y formulario
+    setTimeout(() => {
+      document.getElementById('invitacion').style.display = 'block';
+      document.getElementById('formulario').style.display = 'block';
+    }, 6000); // 6 segundos de mariposas volando
+  </script>
+
+</body>
+</html>
